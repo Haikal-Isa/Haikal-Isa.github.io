@@ -1,0 +1,191 @@
+\documentclass[10pt,aspectratio=54]{beamer}
+\usetheme{Berkeley}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\deriv}{\mathrm{d}}
+\newcommand{\s[1]}{\textsuperscript{#1}}
+
+\begin{document}
+
+\title{Kinematika 1 Dimensi}
+\author{Haikal Isa Al Mahdi}
+\date{}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Pengenalan}
+Dalam kinematika, kita hanya menganalisis karakteristik pergerakan suatu benda tanpa mempedulikan penyebabnya. \\
+Dalam kinematika 1 dimensi, pergerakan dibatasi hanya pada satu garis.
+\end{frame}
+
+\begin{frame}
+\frametitle{GLBB}
+Untuk perpindahan dan kecepatan yang hanya bergantung pada waktu serta percepatan yang konstan, rumusnya adalah:
+\begin{itemize}
+ \item $v=v_0+at$
+ \item $v^2 = v_0^2 + 2a\Delta x$
+ \item $x = x_0 + v_0t + \frac{1}{2}at^2$
+\end{itemize}
+dengan
+\begin{description}
+ \item[$v_0$:] Kecepatan awal
+ \item[$x_0$:] Posisi awal
+ \item[$v$:] Kecepatan akhir
+ \item[$a$:] Percepatan
+\end{description}
+\end{frame}
+
+\begin{frame}
+\frametitle{Persamaan Kuadrat}
+Seringkali kita akan menemui persamaan kuadrat di dalam kinematika. Solusi untuk
+$$ax^2+bx+c=0$$
+adalah
+$$x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Bentuk Lain}
+Alternatif lainnya adalah menggunakan kalkulus untuk menyatakan perpindahan, kecepatan, dan percepatan.
+\begin{enumerate}
+ \item Perpindahan: $x$
+ \item Kecepatan: $$v = \dot{x} = \frac{\deriv x}{\deriv t}$$
+ \item Percepatan: $$a = \dot{v} = \ddot{x} = \frac{\deriv v}{\deriv t}$$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Notifikasi}
+\begin{block}{Tips}
+Selain dari yang disebutkan di atas, ada kalanya kita menggunakan konsep gerak relatif. Dengan ini, kita akan lebih mudah menganalisis gerak suatu benda yang bergerak jika dilihat dari suatu pengamat yang bergerak ketimbang jika dilihat dari pengamat yang diam.
+\end{block}
+Untuk lebih jelasnya, perhatikan contoh berikut.\\~\\
+Dua butir mobil mula-mula diam dan dan terpisah sejauh 2000 meter dalam posisi saling berhadapan. Kemudian, kedua mobil bergerak menuju satu sama lain dengan kecepatan yang berbeda. \\ Mobil A memiliki kecepatan $15$ m/s. Mobil B memiliki kecepatan $35$ m/s. Keduanya akhirnya berpapasan setelah $t$ detik. \\ Berapakah nilai $t$?
+\end{frame}
+
+\begin{frame}
+\frametitle{Solusi}
+ Misalkan $v_A$ dan $v_B$ masing-masing adalah kecepatan mobil A dan mobil B. Dilihat dari mobil A, mobil B bergerak dengan kecepatan $v_A+v_B$ menuju mobil A. Dengan ini, 
+ \begin{align*}
+  d&=(v_A+v_B) t \\
+  2000&=(15+35)t \\
+  t&=\frac{2000}{50}\\
+   &=\boxed{40\text{ detik}}
+ \end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contoh Soal 1}
+Sebuah bola dilempar vertikal ke atas dengan kecepatan awal $20$ m/s. Tentukan waktu yang diperlukan untuk mendarat kembali ke titik semula ($g=10$ m/s \textsuperscript{2}).
+\end{frame}
+
+\begin{frame}
+\frametitle{Solusi Contoh Soal 1}
+
+\begin{columns}[c]
+  \column{0.5\textwidth}
+  
+  
+Pada awalnya (saat naik), percepatan gravitasi melawan kecepatan bola sehingga $g$ negatif.
+$$y=v_0t-\frac{1}{2}gt^2$$
+Untuk menentukan $y$, kita gunakan rumus kedua glbb.
+\begin{align*}
+v^2&=v_0^2 - 2g\Delta y \\
+0&=20^2-20\Delta y \\
+y&=\frac{400}{20} \\
+&=20 \text{ meter}
+\end{align*}
+  \column{0.5\textwidth}
+dengan ini, selang waktu naiknya adalah
+$$20=20t-5t^2$$
+Jika diubah ke bentuk persamaan kuadrat menjadi
+$$t^2-4t+4=0$$
+Yang mana solusinya adalah $t=2$. 
+Ini adalah selang waktu naik. Selang waktu turun juga demikian. Nilainya adalah $2$ detik. Jadi,\\~\\
+Waktu totalnya adalah $\boxed{4 \text{ detik}}$.
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contoh Soal 2}
+Diketahui percepatan suatu benda $a$ berbanding lurus terhadap kecepatannya $v$. Jika kecepatan suatu benda mula-mula adalah $v_0$, tentukan fungsi kecepatannya terhadap waktu.
+\end{frame}
+
+\begin{frame}
+\frametitle{Solusi Contoh Soal 2}
+
+
+\begin{columns}[c]
+  \column{0.5\textwidth}
+  
+  
+  
+Maksud dari soal di atas adalah:\\
+Tentukan $v(t)$ jika diketahui $v(0)=v_0$ dan $a \propto v$.\\~\\
+   
+Soal ini tidak dapat diselesaikan dengan GLBB (jelas-jelas percepatannya tak konstan). Sebagai catatan, $a\propto v$ artinya $a=kv$ untuk suatu konstanta $k$.
+
+
+  \column{0.5\textwidth}
+  
+  
+\begin{align*}
+ a &= kv &\\
+ \frac{\D v}{\D t} &= kv &\\
+ \frac{1}{v}\D v &= k\D t &\\
+ \int_{v_0}^{v}{\frac{1}{v}\D v} &= \int_{t_0}^{t}{k\D t} &\\
+ \ln \frac{v}{v_0} &= kt & (t_0=0) \\
+ \frac{v}{v_0} &= e^{kt} &\\
+ \Aboxed{v &= v_0 e^{kt}} &\\
+\end{align*}
+jadi, $v(t) = v_0 e^{kt}$
+\end{columns}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Latihan Soal}
+\begin{enumerate}
+ \item Di sebuah perlombaan balap mobil, terdapat 4 mobil balap di garis start yang mula-mula diam, kemudian bergerak.
+   \begin{itemize}
+     \item Mobil 1 bergerak dengan kecepatan $v(t) = t^2$ m/s. 
+     \item Mobil 2 bergerak dengan kecepatan $v(t) = 8t$ m/s.
+     \item Mobil 3 tidak bergerak dalam 4 detik. Setelah itu bergerak dengan percepatan $a(t)= 4t\text{ m/s}^2$
+     \item Mobil 4 bergerak dengan kecepatan konstan $40$ m/s.
+   \end{itemize}
+   Jika garis finish terletak 4km dari garis start, mobil mana yang lebih dahulu memasuki garis finish?
+   
+  \item Diketahui posisi suatu benda mengikuti fungsi $x(t) = e^{2t}+2t$. Tentukan kecepatan sesaat benda pada saat $t=3$
+   
+   \newpage
+  \item Suatu ketika, Blaze melemparkan cakram api dengan kecepatan awal $v_0$. Sakuya memberikan perlambatan $a$ terhadap cakram. Diketahui $a=\alpha + \beta v$ yang mana $v$ adalah kecepatan benda tersebut. $\alpha$ dan $\beta$ adalah suatu konstanta.
+    (Petunjuk: $\int{\frac{1}{ax+b}}=\frac{1}{a}\ln(ax+b)+C)$
+  \begin{enumerate}
+    \item Tentukan fungsi kecepatan cakram api tersebut terhadap waktu
+    \item Diketahui $\alpha=1,\beta = 0.2$, dan $v_0=100$ m/s. Tentukan kecepatan cakram api tersebut saat 5 detik. \\
+  \end{enumerate}
+  \item Terdapat 2 benda titik bermassa masing-masing $m_1$ dan $m_2$ dan terpisah sejauh $r$ meter. Jika benda $m_2$ mulai menjauhi $m_1$ dengan kecepatan $v$ ke kanan, tentukan kecepatan pusat massanya.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solusi}
+\begin{enumerate}
+ \item mobil 1: $10\sqrt[3]{12}$ sekon; mobil 2: $10\sqrt{10}$ sekon; mobil 3: $4 + 10\sqrt[3]{6}$; mobil 4: $100$ sekon. Jadi pemenangnya adalah $\boxed{\text{mobil 1}}$;
+ 
+ \item $2e^6 + 2$
+ \item \begin{enumerate}
+   \item $ \frac{e^{-\beta t}(\alpha + \beta v_0) - \alpha}{\beta}$
+   \item $\frac{105}{e}-5$
+ \end{enumerate}
+ \item $\frac{m_2v}{m_1+m_2}$
+ 
+\end{enumerate}
+\end{frame}
+
+\end{document}

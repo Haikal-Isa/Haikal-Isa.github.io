@@ -1,0 +1,155 @@
+\documentclass{beamer}
+\usetheme{Berkeley}
+\usepackage{amsmath}
+
+
+\title{Pengenalan Vektor}
+\author{Haikal Isa Al Mahdi}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Pengenalan Vektor}
+Anggap vektor adalah alat untuk menentukan nilai dan arah suatu objek. Nilai bisa berupa posisi, kecepatan, percepatan, gaya, momentum, dll.
+
+Vektor bisa dinyatakan sebagai berikut:
+\begin{equation*}
+\vec{v} = x\hat{\imath} + y\hat{\jmath} + z\hat{k}
+\end{equation*}
+yang panjangnya adalah:
+\begin{equation*}
+\|\vec{v}\| = \sqrt{v_x^2 + v_y^2 + v_z^2}
+\end{equation*}
+Selanjutnya kita akan mempelajari (mungkin menghafal) operasi-operasi dalam vektor.
+\end{frame}
+
+\begin{frame}{Operasi Vektor}
+\begin{itemize}
+   \item Penjumlahan dan Pengurangan
+       \begin{equation*}
+           \vec{u} \pm \vec{v} = (u_x \pm v_x)\hat{\imath} + (u_y \pm v_y)\hat{\jmath} + (u_z \pm v_z)\hat{k}
+       \end{equation*}
+   \item Perkalian Skalar
+       \begin{equation*}
+           c\vec{v} = c(v_x\hat{\imath} + v_y\hat{\jmath} + v_z\hat{k}) = cv_x\hat{\imath} + cv_y\hat{\jmath} + cv_z\hat{k}
+       \end{equation*}
+   \item Perkalian Titik
+       \begin{equation*}
+           \vec{u} \cdot \vec{v} = u_xv_x + u_yv_y + u_zv_z
+       \end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operasi Vektor (lanjutan)}
+\begin{itemize}
+   \item Perkalian Silang
+       \begin{align*}
+           \vec{u} \times \vec{v} &= (u_yv_z - u_zv_y)\hat{\imath} + (u_zv_x - u_xv_z)\hat{\jmath} + (u_xv_y - u_yv_x)\hat{k} \\
+                                  &= \begin{vmatrix}
+                                       \hat{\imath} & \hat{\jmath} & \hat{k} \\
+                                       u_x & u_y & u_z \\
+                                       v_x & v_y & v_z
+                                     \end{vmatrix}
+       \end{align*}
+   \item Sudut Terkecil antara Dua Vektor
+       \begin{align*}
+           \vec{u} \cdot \vec{v} &= \|\vec{u}\|\|\vec{v}\| \cos\theta \\
+           \vec{u} \times \vec{v} &= \|\vec{u}\|\|\vec{v}\| \sin\theta
+       \end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contoh Soal 1}
+Sebuah objek mula-mula diam. Kemudian bergerak 3 meter ke kanan dan 8 meter ke atas. Kemudian bergerak lagi 6 meter ke kiri dan 12 meter ke bawah. Dimana objek tersebut sekarang dari titik awalnya?
+\end{frame}
+
+\begin{frame}
+\frametitle{Solusi Contoh Soal 1}
+\begin{itemize}
+   \item Bergerak 3 meter ke kanan dan 8 meter ke atas: $\vec{u} = 3\hat{\imath} + 8\hat{\jmath}$
+   \item Bergerak 6 meter ke kiri dan 12 meter ke bawah: $\vec{v} = -6\hat{\imath} - 12\hat{\jmath}$
+   \item Resultannya adalah $\vec{u} + \vec{v} = (3 - 6)\hat{\imath} + (8 - 12)\hat{\jmath} = -3\hat{\imath} - 4\hat{\jmath}$
+\end{itemize}
+Sehingga objek tersebut berada pada 3 meter ke kiri dan 4 meter ke bawah dari titik awal.
+\end{frame}
+
+\begin{frame}
+\frametitle{Contoh Soal 2}
+Dua Mobil mula-mula berada titik yang sama $(0, 0)$. Kedua mobil bergerak lurus namun berbeda arah. Mobil A berhenti di titik $(6, 8)$. Mobil B berhenti titik $(7, 24)$. Tentukan sudut terkecil yang dibentuk dari lintasan kedua mobil tersebut.
+\end{frame}
+
+\begin{frame}
+\frametitle{Solusi Contoh Soal 2}
+\begin{itemize}
+   \item Vektor lintasan mobil A: $\vec{v} = 6\hat{\imath} + 8\hat{\jmath}$
+   \item Vektor lintasan mobil B: $\vec{w} = 7\hat{\imath} + 24\hat{\jmath}$
+   \item Panjang vektor $\vec{v}$ dan $\vec{w}$:
+       \begin{align*}
+           \|\vec{v}\| &= \sqrt{6^2 + 8^2} = 10 \\
+           \|\vec{w}\| &= \sqrt{7^2 + 24^2} = 25
+       \end{align*}
+   \item Menggunakan perkalian titik:
+       \begin{align*}
+           \vec{v} \cdot \vec{w} &= \|\vec{v}\|\|\vec{w}\| \cos\theta \\
+                                  &= 42 + 192 = 250 \cos\theta \\
+                                  &\implies \cos\theta = 0.936 \\
+                                  &\implies \theta \approx 20.61^\circ
+       \end{align*}
+\end{itemize}
+Jadi, sudut terkecil yang dibentuk dari lintasan kedua mobil tersebut adalah $20.61^\circ$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Soal}
+\begin{enumerate}
+   \item Tentukan nilai dari $r\vec{v}$ untuk $r = 1.4$ dan $\vec{v} = 7\hat{\imath} + \pi\hat{\jmath}$.
+   \item Diketahui $\vec{v} = 3\hat{\imath} + 4\hat{\jmath} + \hat{k}$ dan $\vec{w} = 4\hat{\imath} + 7\hat{\jmath} - 2\hat{k}$. Tentukan nilai dari:
+       \begin{enumerate}
+           \item $\vec{v} \cdot \vec{w}$
+           \item $\vec{v} \times \vec{w}$
+       \end{enumerate}
+   \item Tentukan luas dari segitiga yang dibentuk oleh ketiga titik berikut: $(0, 0)$, $(4, 8)$, dan $(10, 7)$.
+   
+   \end{enumerate}
+   \end{frame}
+   
+   
+ 
+
+\begin{frame}[allowframebreaks]
+\frametitle{Kunci Jawaban}
+\begin{enumerate}
+   \item $r\vec{v} = 1.4(7\hat{\imath} + \pi\hat{\jmath}) = 9.8\hat{\imath} + 1.4\pi\hat{\jmath}$
+   \item \begin{enumerate}
+           \item $\vec{v} \cdot \vec{w} = 3(4) + 4(7) + 1(-2) = 38$
+           \item $\vec{v} \times \vec{w} = \begin{vmatrix}
+                                       \hat{\imath} & \hat{\jmath} & \hat{k} \\
+                                       3 & 4 & 1 \\
+                                       4 & 7 & -2
+                                     \end{vmatrix} = -13\hat{\imath} + 10\hat{\jmath} + 5\hat{k}$
+            \item $\sqrt{26}$
+       \end{enumerate}
+   \item Misalkan titik $(0, 0)$, $(4, 8)$, dan $(10, 7)$ berturut-turut $A$, $B$, dan $C$. Vektor $\vec{AB} = 4\hat{\imath} + 8\hat{\jmath}$ dan $\vec{AC} = 10\hat{\imath} + 7\hat{\jmath}$. Luas segitiga:
+       \begin{align*}
+           \text{Luas} &= \frac{1}{2}|\vec{AB} \times \vec{AC}| \\
+                      &= \frac{1}{2}\left|\begin{vmatrix}
+                                       \hat{\imath} & \hat{\jmath} & \hat{k} \\
+                                       4 & 8 & 0 \\
+                                       10 & 7 & 0
+                                     \end{vmatrix}\right| \\
+                      &= \frac{1}{2}|(28 - 80)\hat{k}| \\
+                      &= \frac{1}{2}|28 - 80| = 26
+       \end{align*}
+\end{enumerate}
+\end{frame}
+
+\end{document}
