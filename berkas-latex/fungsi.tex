@@ -1,0 +1,215 @@
+\documentclass[10pt,aspectratio=54, handout]{beamer}
+%\usefonttheme[onlymath]{serif}
+\usepackage{graphicx}
+\usetheme{Berlin}
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=indonesian]{malay}
+
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\author{Haikal Isa Al Mahdi}
+\title{Fungsi}
+
+\begin{document}
+  \begin{frame}
+    \maketitle
+  \end{frame}
+  
+  \frame{
+    \frametitle{Daftar Isi}
+    \tableofcontents
+  }
+  
+  \section{Fungsi yang Kita Kenal}
+  \label{sec:Fungsi yang Kita Kenal}
+  
+  \begin{frame}{Fungsi yang Kita Kenal}
+    Kita pakai definisi berikut
+    \begin{block}{Definisi IO}
+      Fungsi $f\,(x)$ mengambil suatu $x$ sebagai input dan menghasilkan nilai keluaran.
+    \end{block}
+    
+    \begin{exampleblock}{Contoh}
+      Diketahui $f(x) = x \bmod 12$ \\~\\
+      $f(9)$ akan menghasilkan keluaran $9$, namun $f(15)$ menghasilkan keluaran $3$.
+    \end{exampleblock}
+  \end{frame}
+  
+  \begin{frame}{Kenapa Fungsi}
+    Ketahuilah bahwa fungsi termasuk hal yang mudah untuk dikerjakan dalam osk informatika. Ekspresi dalam bentuk fungsi lebih dapat dicerna ketimbang dalam bentuk kode sumber maupun pseudocode.
+    \\
+    Substitusi itu penting
+  \begin{exampleblock}{Contoh Soal}
+    Diketahui $f(x^2+2) = x$. Tentukan $f(x)$.
+  \end{exampleblock}
+  
+  \begin{block}{Jawaban}
+    substitusikan $\sqrt{x-2}$ ke dalam fungsi. Dengan ini, $f(x) = \sqrt{x-2}$.
+  \end{block}
+  \end{frame}
+  
+  
+  \section{Rekursi}
+  \label{sec:Rekursi}
+  
+  \subsection{Satu Variabel}
+  \label{sub:Satu Variabel}
+  
+  \begin{frame}{Fungsi Rekursi}
+  \begin{columns}[c]
+    \column{0.4\textwidth}
+  Materi tentang rekursi terkadang keluar di osk informatika. Fungsi rekursi adalah fungsi yang memanggil diri sendiri. Namun, agar tak terjadi pemanggilan yang tak terhingga, terdapat nilai dasar (base case).
+    
+    
+    \column{0.6\textwidth}
+    \begin{exampleblock}{Contoh}
+      Fungsi faktorial secara rekursif didefinisikan sebagai berikut:
+      \begin{itemize}
+        \item $f(x) = xf(x-1)$
+        \item $f(0) = f(1) = 1$
+      \end{itemize}
+      Cara kerjanya sebagai berikut: Misalkan kita ingin mencari nilai $f(4)$. Prosesnya sebagai berikut:
+      \begin{itemize}
+        \item $f(4) = 4\cdot f(3)$
+        \item $f(4) = 4\cdot 3\cdot f(2)$
+        \item $f(4) = 4\cdot 3\cdot 2\cdot f(1)$
+        \item $f(4) = 4\cdot 3\cdot 2\cdot 1$
+        \item $\boxed{f(4) = 24}$
+      \end{itemize}
+      
+    \end{exampleblock}
+  
+  \end{columns}
+  
+  \end{frame}
+  
+  \subsection{Multivariabel}
+  \label{sub:Multivariabel}
+  
+  \begin{frame}{Fungsi dengan Banyak Variabel}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+    Fungsi tidak hanya terbatas pada satu variabel. Ada pula fungsi dengan banyak variabel. Dan ya, ada pula fungsi rekursi dengan banyak variabel. 
+    
+    \begin{exampleblock}{Contoh}
+      Suatu fungsi didefinisikan sebagai berikut:
+      \begin{itemize}
+        \item $f(x,y) = 2f(x-2,y) - f(x,y-2)$
+        \item $f(x,1) = f(x,0) = 1$
+        \item $f(1,y) = f(0,y) = 10$
+      \end{itemize}
+      Tentukan nilai dari $f(5,4)$
+    \end{exampleblock}
+    
+    
+    \column{0.5\textwidth}
+    \begin{block}{Jawaban}
+      Kita cari satu persatu.
+      \begin{itemize}
+        \item $f(5,4) = 2\cdot f(3,4) - f(5,2)$
+        \item $f(3,4) = 2\cdot f(1,4) - f(3,2)$
+        \item $f(5,2) = 2\cdot f(3,2) - f(5,1)$
+        \item $f(3,2) = 2\cdot f(1,2) - f(3,0)$
+      \end{itemize}
+      Sekarang kita tahu bahwa $f(1,2)=10$ dan $f(3,0)=1$. Dengan ini:
+      \begin{itemize}
+        \item $f(3,2) = 20 - 1 = 19$
+        \item $f(5,2) = 38 - 1 = 37$
+        \item $f(3,4) = 20 - 19 = 1$
+        \item $f(5,4) = 2 - 37 = \boxed{-35}$
+      \end{itemize}
+    \end{block}
+    
+    
+  \end{columns}
+  \end{frame}
+  
+  \section{Fungsi Lainnya}
+  \label{sec:Fungsi Lainnya}
+  
+  \begin{frame}{Fungsi Atap dan Lantai}
+  
+  \begin{columns}[c]
+  \column{0.5\textwidth}
+    \begin{block}{Fungsi Lantai}
+      Secara umum, fungsi lantai dinyatakan dengan $\floor{x}$ yang artinya bilangan bulat terbesar yang kurang dari atau sama dengan $x$. Nilai dari $\floor{x}$ selalu berupa bilangan bulat yang memenuhi
+      $$\floor{x}\leq x < \floor{x}+ 1$$
+      
+      Sebagai contoh:
+      \begin{itemize}
+        \item $\floor{3.2} = 3$
+        \item $\floor{4.99} = 4$
+        \item $\floor{-2.1} = -3$
+      \end{itemize}
+    \end{block}
+    
+    \column{0.5\textwidth}
+    \begin{block}{Fungsi Atap}
+      Secara umum, fungsi atap dinyatakan dengan $\ceil{x}$ yang artinya bilangan bulat terkecil yang lebih dari atau sama dengan $x$. Nilai dari $\ceil{x}$ selalu berupa bilangan bulat yang memenuhi
+      $$\ceil{x}-1< x \leq \ceil{x}$$
+      
+      Sebagai contoh:
+      \begin{itemize}
+        \item $\ceil{3.2} = 4$
+        \item $\ceil{4.99} = 5$
+        \item $\ceil{-2.1} = -2$
+      \end{itemize}
+    \end{block}
+    
+    
+    \end{columns}
+  \end{frame}
+  
+  \section{Contoh Soal}
+  \label{sec:Contoh Soal}
+  
+  \begin{frame}{Contoh Soal}
+    \begin{enumerate}
+      \item Suatu fungsi didefinisikan sebagai berikut
+      $$f(n) =
+      \begin{cases}
+      2n, &\quad n \leq 2 \\
+       2f(n-1) + 3f(n-2), & \quad n > 2
+      \end{cases}
+      $$
+      Tentukan nilai dari $f(5)-f(4)$
+      \item Tentukan interval $x$ yang memenuhi $\floor{x-9}+2 = 12$
+    \end{enumerate}
+  \end{frame}
+  
+  \begin{frame}{Jawaban}
+    \begin{enumerate}
+      \item Lakukan pengisian tabel 
+      \begin{table}[!h]
+        \begin{tabular}{|c|c|c|c|c|c|}
+          \hline
+          $n$ & 1 & 2 & 3 & 4 & 5 \\
+          \hline
+          $f(n)$ & 2 & 4 & 14 & 40 & 122\\ \hline
+        \end{tabular}
+        
+        \caption{Pengisian Tabel}
+      \end{table}
+      Sehingga didapatlah $f(5)-f(4) = 82$
+      \item Untuk menyelesaikan soal ini, kita selesaikan sebagaimana menyelesaikan pertidaksamaan.
+      \begin{align*}
+        \floor{x-9}+2 &= 12 \\
+        \floor{x-9} &= 10 \\
+        \floor{x-9} \leq &~x-9 < \floor{x-9}+1 &\quad\text{Definisi fungsi lantai}\\
+        10 \leq &~x-9 < 11 &\quad\text{Substitusi nilai}\\
+        19 \leq &~x < 20
+      \end{align*}
+      Jadi, interval yang memenuhi adalah $19 \leq x < 20$
+    \end{enumerate}
+    \nocite{*}
+  \end{frame}
+  
+  \section*{Pustaka}
+  \label{sec:Pustaka}
+  
+  \begin{frame}{Pustaka}
+    \bibliography{pustaka.bib}
+    \bibliographystyle{plain}
+  \end{frame}
+\end{document}
